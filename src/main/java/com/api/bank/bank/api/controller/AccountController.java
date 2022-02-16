@@ -16,11 +16,12 @@ public class AccountController {
     private final AccountService accountService;
 
     @PostMapping("/register")
-    public HashMap<String, Integer> registerAccount(@RequestBody Account account){
+    public HashMap<String, Integer> registerAccount(@RequestBody Account account) {
 
-         HashMap<String, Integer> map = new HashMap<>();
+
+        HashMap<String, Integer> map = new HashMap<>();
         accountService.accountRegister(account);
-         map.put("bank_account_id", accountService.accountRegister(account));
+        map.put("bank_account_id", accountService.accountRegister(account));
         return map;
     }
 }
